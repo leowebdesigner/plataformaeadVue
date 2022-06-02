@@ -73,12 +73,12 @@
 import router from '@/router'
 
 export default {
-   
-    name: 'Auth',
-    setup(){
-        const login = ()=> router.push({name:'campus.home'})
 
-        return{
+    name: 'Auth',
+    setup() {
+        const login = () => router.push({ name: 'campus.home' })
+
+        return {
             login
         }
     }

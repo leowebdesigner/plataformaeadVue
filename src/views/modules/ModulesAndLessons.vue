@@ -1,4 +1,5 @@
 <template>
+
     <div class="pageTitle">
         <span class="title">Curso X</span>
         <span class="dots">
@@ -15,14 +16,15 @@
 
             <div class="right">
                 <div class="content">
-          
-                  <player/>
 
-                   <supports-lesson/>
+                  <player/>
+                  <supports-lesson/>
+
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>

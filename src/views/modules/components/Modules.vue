@@ -1,5 +1,4 @@
 <template>
-
     <div class="left">
         <div class="card">
             <div class="title bg-laravel">
@@ -51,7 +50,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>

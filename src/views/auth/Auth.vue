@@ -80,23 +80,16 @@ export default {
 
         const store = useStore()
 
-        
-
         const auth = () => {
-            store.dispatch('auth',{
-                email:'contato@leowebdesigner.com.br',
+            store.dispatch('auth', {
+                email: 'contato@leowebdesigner.com.br',
                 password: '12345',
                 device_name: 'auth_by_vue3'
             })
-            
         }
-
         return {
-            
             auth,
         }
     }
-
-
 }
 </script>

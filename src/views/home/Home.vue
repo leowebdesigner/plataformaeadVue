@@ -21,11 +21,24 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'; 
+import { useStore } from 'vuex';
+
 import CardCourse from './components/CardCourse.vue'
+
 export default {
+
   name: "Home",
+  setup (){
+    const store = useStore()
+    onMounted(() => store.dispatch('getCourses'))
+      
+    
+  },
+
   components: {
     CardCourse
               }
 };
+
 </script>

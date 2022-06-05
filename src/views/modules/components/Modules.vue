@@ -12,7 +12,7 @@
                 </div>
                 <ul class="classes" v-for="lesson in module.lessons" :key="lesson.id">
                     <li>
-                        <!--<span class="check active fas fa-check"></span>-->
+                        <span v-if="lesson.views.length > 0" class="check active fas fa-check"></span>
                         <span class="nameLesson">{{lesson.name}}</span>
                     </li>
                 </ul>

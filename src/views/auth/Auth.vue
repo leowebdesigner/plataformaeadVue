@@ -81,6 +81,7 @@
 //import router from '@/router'
 import { useStore } from 'vuex'
 import { ref } from 'vue'
+import { notify } from "@kyvg/vue3-notification"
 
 import router from '@/router'
 
@@ -103,7 +104,19 @@ export default {
                 device_name: 'auth_by_vue3'
             })
             .then(() => router.push({name: 'campus.home'}))
-            .catch(() => alert('error'))
+            .catch( error => {
+                let msgError = 'Falha na requisição'
+
+                if(error.status === 422) msgError = 'Dados inválidos'
+                if(error.status === 404) msgError = 'Usuário não encontrado'
+
+                notify({
+            title: 'Falha ao autenticar',
+            text: msgError,
+            type: "warn"
+            })
+
+            })
             .finally(() => loading.value = false)
         }
         return {

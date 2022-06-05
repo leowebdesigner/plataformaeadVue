@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import { notify } from '@kyvg/vue3-notification'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 
@@ -86,8 +87,16 @@ export default {
         const forgetPassword = () => {
             loading.value = true
             store.dispatch('forgetPassword', {email: email.value})
-            .then(() => alert('confira seu email'))
-            .catch(() => alert('error'))
+            .then(() => notify({
+            title: 'Confira seu e-mail',
+            text: 'Enviamos um link com a redefinição para o e-mail cadastrado',
+            type: "warn"
+            }))
+            .catch(() =>  notify({
+            title: 'Falha ao autenticar',
+            text: 'Falha ao recuperar o usuário',
+            type: "warn"
+            }))
             .finally(() => loading.value = false)
 
         }
